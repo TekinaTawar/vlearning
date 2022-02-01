@@ -8,7 +8,7 @@ const MiddleSection = () => {
   return (
     <div className={s.sec2}>
       <div className={s.logo}>
-        <Image src="/logo.png" alt="logo" width={153} height={40} />
+        <Image src="/logofull.png" alt="logo" width={153} height={40} />
       </div>
       <SearchWidget />
       {loggedin ? (
