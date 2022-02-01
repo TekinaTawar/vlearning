@@ -11,75 +11,21 @@ input {
   font-family: "Poppins", sans-serif;
 }
 
-li{
+li {
   list-style: none;
 }
 
 :root {
-  --logo-yellow: #fbd72b;
-  --logo-red: #f9484a;
-  --secondry-blue: #0B2B4F;
-  --background-gray: #F0F0F0;
+  --primary-yellow: #ffcc00;
+  --secondry-purple: #6270ea;
+  --secondry-blue: #0b2b4f;
+  --background-gray: #f0f0f0;
 }
 
-/* header section 1 */
-.header .sec1 {
-  display: flex;
-  background-color: var(--secondry-blue);
-  color: white;
-
-  height: 30px;
-  justify-content: space-around;
-  align-items: center;
-}
-
-.sec1 *{
-  font-weight: 300;
-}
-
-/* header section2 */
-.header .sec2 {
-  height: 100px;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-}
-
-.sec2 .logo{
-  display: flex;
-  /* align-items: center; */
-}
-
-.logo img{
-  height: 40px;
-}
-
-.logo span{
-  font-size: 36px;
-  font-weight: 600;
-  color: var(--logo-yellow);
-  
-}
-
-/* header section3 */
-.sec3 ul{
-  display: flex;
-  background-color: var(--secondry-blue);
-  height: 40px;
-  align-items: center;
-  justify-content: space-around;
-}
-
-ul li a{
- text-decoration: none;
- color: white;
-}
-
-main{
+main {
   background-color: var(--background-gray);
   height: 100vh;
   display: grid;
   padding: 20px;
   grid-template-columns: 1fr 1fr 1fr;
-  
 }

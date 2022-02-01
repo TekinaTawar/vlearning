@@ -3,6 +3,7 @@ import Ribbon from "./Ribbon";
 import IconBtn from "./IconBtn";
 import FormatIcon from "./FormatIcon";
 
+import s from "../../styles/Card.module.scss";
 import {
   FaEye,
   FaShoppingCart,
@@ -28,33 +29,33 @@ const Card = ({ product }) => {
   const duration = product.duration;
   const views = product.views;
   const validity = product.validity;
-  const combo = false;
+  const combo = true;
 
   return (
-    <div className="card">
+    <div className={s.card}>
       {combo && <Ribbon />}
-      <section className="sec1">
-        <div className="faculty">
+      <section className={s.sec1}>
+        <div className={s.faculty}>
           <Image
             src={`/images/teachers/${facultyName}.jpg`}
             height={85}
             width={85}
             alt="teacher image"
-            className="facultyImg"
+            className={s.facultyImg}
           />
-          <h5 className="facultyName">{facultyName}</h5>
+          <h5 className={s.facultyName}>{facultyName}</h5>
         </div>
-        <div className="product">
-          <h3 className="productName">{productName}</h3>
-          <h4 className="productCategory">{`${exam}/ ${courseType}`}</h4>
-          <h4 className="finalCost">{`₹ ${price}`}</h4>
-          <h4 className="originalCost">{`₹ ${
+        <div className={s.product}>
+          <h3 className={s.productName}>{productName}</h3>
+          <h4 className={s.productCategory}>{`${exam}/ ${courseType}`}</h4>
+          <h4 className={s.finalCost}>{`₹ ${price}`}</h4>
+          <h4 className={s.originalCost}>{`₹ ${
             price + parseInt((10 / 100) * price)
           }`}</h4>
         </div>
       </section>
 
-      <p className="off">10% OFF</p>
+      <p className={s.off}>10% OFF</p>
       <table>
         <tr>
           <th>Lecture</th>
@@ -69,7 +70,7 @@ const Card = ({ product }) => {
           <td>{`${validity} Months`}</td>
         </tr>
       </table>
-      <section className="format">
+      <section className={s.format}>
         <div>
           <h5>Videos: </h5>
           {format === "USB" ? (
@@ -94,7 +95,7 @@ const Card = ({ product }) => {
           )}
         </div>
       </section>
-      <div className="actionLinks">
+      <div className={s.actionLinks}>
         <ul>
           <IconBtn icon={<FaEye />} color="#EBA300" link="#" />
           <IconBtn icon={<FaShoppingCart />} color="#34567B" link="#" />
