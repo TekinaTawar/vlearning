@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import s from "../../styles/MiddleSection.module.scss";
 import { FaUserCircle, FaShoppingCart } from "react-icons/fa";
 
@@ -22,8 +23,12 @@ const MiddleSection = () => {
         </>
       ) : (
         <>
-          <div className={s.signupButton}> SignUp</div>
-          <div className={s.loginButton}>Login</div>
+          <Link href="/auth">
+            <a className={s.signupButton}> SignUp</a>
+          </Link>
+          <Link href="/auth">
+            <a className={s.loginButton}>Login</a>
+          </Link>
         </>
       )}
 

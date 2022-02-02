@@ -17,7 +17,7 @@ const Header = () => {
           </h5>
         </div>
       </div>
-
+        
       {/* logo&search&userlink Section */}
       <MiddleSection />
 
