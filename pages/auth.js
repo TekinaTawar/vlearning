@@ -8,11 +8,11 @@ const Auth = () => {
     <div className={s.container}>
       {/* background image  */}
       <div className={s.imageContainer}>
-        <Image src={coverImage} layout="fill" objectFit="cover" />
+        <Image src={coverImage} layout="fill" objectFit="cover" alt="books Image"/>
       </div>
       {/* left Side logo */}
       <div className={s.logo}>
-        <Image src={whiteLogo} width={180} height={50} />
+        <Image src={whiteLogo} width={180} height={50} alt="Vlearning"/>
         <h3>Sign in or create an account.</h3>
       </div>
       {/* right side form  */}

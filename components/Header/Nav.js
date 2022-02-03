@@ -109,8 +109,8 @@ const Navbar = () => {
         <li className={s.faculty}>
           <a href="#">Faculty</a>
           <ul className={s.oNavLevel2}>
-            {teachers.map((teacher) => (
-              <li>
+            {teachers.map((index, teacher) => (
+              <li key={index}>
                 <a href="#">{teacher}</a>
               </li>
             ))}
@@ -119,8 +119,8 @@ const Navbar = () => {
         <li className={s.subject}>
           <a href="#">Subjects</a>
           <ul className={s.oNavLevel2}>
-            {subjects.map((subject) => (
-              <li>
+            {subjects.map((index, subject) => (
+              <li key={index}>
                 <a href="#">{subject}</a>
               </li>
             ))}
