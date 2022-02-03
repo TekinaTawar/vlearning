@@ -19,24 +19,3 @@
 .sec1 *{
   font-weight: 300;
 }
-
-
-
-/* header section3 */
-.navBar {
-  background-color: var(--secondry-blue);
-}
-.navBar>ul{
-  display: flex;
-  width: 95%;
-  max-width: 1400px;
-  margin:auto;
-  height: 40px;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.navBar ul>li>a{
- text-decoration: none;
- color: white;
-}
