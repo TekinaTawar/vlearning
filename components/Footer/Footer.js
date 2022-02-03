@@ -15,7 +15,7 @@ const footer = () => {
       <div className={s.contentArea}>
         <div className={s.logoSection}>
           <Image
-            src="/images/VlearningWhite.svg"
+            src="/images/VLearningWhite.svg"
             width={200}
             height={53}
             alt="vlearing White"
