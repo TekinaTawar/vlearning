@@ -8,11 +8,16 @@ const Auth = () => {
     <div className={s.container}>
       {/* background image  */}
       <div className={s.imageContainer}>
-        <Image src={coverImage} layout="fill" objectFit="cover" alt="books Image"/>
+        <Image
+          src={coverImage}
+          layout="fill"
+          objectFit="cover"
+          alt="books Image"
+        />
       </div>
       {/* left Side logo */}
       <div className={s.logo}>
-        <Image src={whiteLogo} width={180} height={50} alt="Vlearning"/>
+        <Image src={whiteLogo} width={180} height={50} alt="Vlearning" />
         <h3>Sign in or create an account.</h3>
       </div>
       {/* right side form  */}
@@ -33,7 +38,7 @@ const Auth = () => {
             id="confirmPassword"
             required
           />
-          <input type="submit" value="Sign Up"/>
+          <input type="submit" value="Sign Up" />
           <div className={s.signInInstead}>
             <p>Already have an Account?</p>
             <Link href="/signin">Sign In</Link>
@@ -46,7 +51,7 @@ const Auth = () => {
           <input type="email" name="email" id="email" required />
           <label htmlFor="password">Password</label>
           <input type="password" name="password" id="password" required />
-          <input type="submit" value="Sign In"/>
+          <input type="submit" value="Sign In" />
           <div className={s.signUpInstead}>
             <p>New User?</p>
             <Link href="/signin">Create an account</Link>
