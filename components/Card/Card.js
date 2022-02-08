@@ -57,18 +57,22 @@ const Card = ({ product }) => {
 
       <p className={s.off}>10% OFF</p>
       <table>
-        <tr>
-          <th>Lecture</th>
-          <th>Duration</th>
-          <th>Views</th>
-          <th>Validity</th>
-        </tr>
-        <tr>
-          <td>{lecture}</td>
-          <td>{`${duration} Hrs`}</td>
-          <td>{`${views}X`}</td>
-          <td>{`${validity} Months`}</td>
-        </tr>
+        <thead>
+          <tr>
+            <th>Lecture</th>
+            <th>Duration</th>
+            <th>Views</th>
+            <th>Validity</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{lecture}</td>
+            <td>{`${duration} Hrs`}</td>
+            <td>{`${views}X`}</td>
+            <td>{`${validity} Months`}</td>
+          </tr>
+        </tbody>
       </table>
       <section className={s.format}>
         <div>

@@ -3,9 +3,21 @@ const test = () => {
     <div>
       {process.env.NODE_ENV}
       {process.env.API_URI}
-      {process.env.NEXT_PUBLIC_TEST}
     </div>
   );
 };
+
+// export async function getStaticProps() {
+//   console.log("get Static Props is running");
+//   console.log(process.env.API_URI);
+
+//   const posts = "this is an example post"
+
+//   return {
+//     props: {
+//       posts,
+//     },
+//   }
+// }
 
 export default test;

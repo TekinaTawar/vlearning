@@ -23,10 +23,10 @@ const MiddleSection = () => {
         </>
       ) : (
         <>
-          <Link href="/auth">
+          <Link href="/auth?q=signup">
             <a className={s.signupButton}> SignUp</a>
           </Link>
-          <Link href="/auth">
+          <Link href="/auth?q=signin">
             <a className={s.loginButton}>Login</a>
           </Link>
         </>
