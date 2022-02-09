@@ -16,38 +16,40 @@ import {
 import { AiFillUsb } from "react-icons/ai";
 import { SiBmcsoftware } from "react-icons/si";
 
+
+
 const Card = ({ product }) => {
-  const facultyName = product.facultyName;
-  const subject = product.subject;
   const format = product.format;
-  const studyMaterial = product.studyMaterial;
-  const exam = product.exam;
-  const courseType = product.courseType;
-  const productName = `${exam} ${subject} ${courseType}`;
+  const isCombo = product.isCombo;
   const price = product.price;
-  const lecture = product.lecture;
-  const duration = product.duration;
-  const views = product.views;
+  const studyMaterial = product.studyMaterial;
   const validity = product.validity;
-  const combo = true;
+  const views = product.views;
+  const batch = product.batch;
+  const hours = product.hours;
+  const subjectName = product.subjectName;
+  const teacherName = product.teacherName;
+  const examName = product.examName;
+  const productName = `${examName} ${subjectName} ${batch}`;
+  const lecture = product.lecture;
 
   return (
     <div className={s.card}>
-      {combo && <Ribbon />}
+      {isCombo && <Ribbon />}
       <section className={s.sec1}>
         <div className={s.faculty}>
           <Image
-            src={`/images/teachers/${facultyName}.jpg`}
+            src={`/images/teachers/${teacherName}.jpg`}
             height={85}
             width={85}
             alt="teacher image"
             className={s.facultyImg}
           />
-          <h5 className={s.facultyName}>{facultyName}</h5>
+          <h5 className={s.teacherName}>{teacherName}</h5>
         </div>
         <div className={s.product}>
           <h3 className={s.productName}>{productName}</h3>
-          <h4 className={s.productCategory}>{`${exam}/ ${courseType}`}</h4>
+          <h4 className={s.productCategory}>{`${examName}/ ${batch}`}</h4>
           <h4 className={s.finalCost}>{`₹ ${price}`}</h4>
           <h4 className={s.originalCost}>{`₹ ${
             price + parseInt((10 / 100) * price)
@@ -68,7 +70,7 @@ const Card = ({ product }) => {
         <tbody>
           <tr>
             <td>{lecture}</td>
-            <td>{`${duration} Hrs`}</td>
+            <td>{`${hours} Hrs`}</td>
             <td>{`${views}X`}</td>
             <td>{`${validity} Months`}</td>
           </tr>
