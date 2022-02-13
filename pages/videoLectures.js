@@ -108,7 +108,7 @@ const QUERY = gql`
   }
 `;
 
-const videoLectures = () => {
+const VideoLectures = () => {
   const { data, loading, error } = useQuery(QUERY);
   if (loading) {
     return <h2>Loading...</h2>;
@@ -192,4 +192,4 @@ const videoLectures = () => {
   );
 };
 
-export default videoLectures;
+export default VideoLectures;

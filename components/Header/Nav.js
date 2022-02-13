@@ -5,11 +5,10 @@ const Navbar = () => {
   const [teachers, setTeachers] = useState([]);
   const [subjects, setSubjects] = useState([]);
 
-
   useEffect(async () => {
     const res = await Promise.all([
-      fetch("http://localhost:1337/api/teachers"),
-      fetch("http://localhost:1337/api/subjects"),
+      fetch(`${process.env.NEXT_PUBLIC_API_URI}/api/teachers`),
+      fetch(`${process.env.NEXT_PUBLIC_API_URI}/api/subjects`),
     ]);
     const [teachersData, subjectsData] = await Promise.all(
       res.map((e) => e.json())
