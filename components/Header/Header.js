@@ -2,7 +2,7 @@ import { FaPhone, FaEnvelope } from "react-icons/fa";
 import s from "../../styles/Header.module.scss";
 import MiddleSection from "./MiddleSection";
 import Navbar from "./Nav";
-const Header = () => {
+const Header = ({signedIn, runSignOut}) => {
   return (
     <header className={s.header}>
       {/* contactInfoSection */}
@@ -19,7 +19,7 @@ const Header = () => {
       </div>
 
       {/* logo&search&userlink Section */}
-      <MiddleSection />
+      <MiddleSection signedIn={signedIn} runSignOut={runSignOut}/>
 
       {/* Navbar */}
       <Navbar />

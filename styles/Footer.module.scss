@@ -1,6 +1,9 @@
 .footer {
   background-image: linear-gradient(to right, #00567c, #008494);
   color: white;
+  margin-top: auto;
+  position: relative;
+  bottom: -50px;
 
   & a {
     color: white;
@@ -15,7 +18,7 @@
     display: flex;
     justify-content: space-between;
     position: relative;
-    height: 300px;
+    height: 270px;
 
     .logoSection {
       align-self: center;

@@ -1,29 +1,58 @@
-import s from "../../styles/auth.module.scss";
 import Link from "next/link";
-
+import Router, { useRouter } from "next/router";
 import { useState } from "react";
+import { gql, useMutation } from "@apollo/client";
+import { setCookie } from "nookies";
+
+import getGQLError from "../../utils/getGQLError";
+
+import s from "../../styles/auth.module.scss";
+
+const SIGNUP = gql`
+  mutation SignUp($input: UsersPermissionsRegisterInput!) {
+    register(input: $input) {
+      jwt
+      user {
+        username
+        email
+      }
+    }
+  }
+`;
 
 const SignUp = () => {
   const [userName, setUserName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+  const router = useRouter();
+  const [signUp] = useMutation(SIGNUP, {
+    onCompleted(data) {
+      setCookie(null, "AuthCookie", data.register.jwt, {
+        maxAge: 30 * 24 * 60 * 60,
+        path: "/",
+      });
+      router.push("/");
+    },
+  });
 
   const submitForm = async (e) => {
     e.preventDefault();
-    const res = await fetch("http://localhost:1337/api/auth/local/register", {
-      method: "POST",
-      header: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        email: email,
-        password: password,
-        username: userName,
-      }),
-    });
-    console.log(res);
+    try {
+      await signUp({
+        variables: {
+          input: {
+            username: `${userName}`,
+            email: `${email}`,
+            password: `${password}`,
+          },
+        },
+      });
+    } catch (error) {
+      console.log(getGQLError(error));
+    }
   };
+
   return (
     <form className={s.signUpForm} onSubmit={submitForm}>
       <h1> Sign Up</h1>

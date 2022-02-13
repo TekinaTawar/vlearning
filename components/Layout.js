@@ -2,7 +2,7 @@ import Head from "next/head";
 import Header from "./Header/Header";
 import Footer from "./Footer/Footer";
 
-const Layout = ({ children }) => {
+const Layout = ({ children, signedIn, runSignOut}) => {
   return (
     <>
       <Head>
@@ -13,7 +13,7 @@ const Layout = ({ children }) => {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Header />
+      <Header signedIn={signedIn} runSignOut={runSignOut}/>
       {children}
       <Footer />
     </>

@@ -1,9 +1,8 @@
 import Image from "next/image";
-
 import { useRouter } from "next/router";
 
-import SignIn from "../components/AuthComponents/SignIn";
-import SignUp from "../components/AuthComponents/SignUp";
+import SignIn from "../components/Auth/SignIn";
+import SignUp from "../components/Auth/SignUp";
 
 import s from "../styles/auth.module.scss";
 import coverImage from "../public/images/bookBackground.jpg";

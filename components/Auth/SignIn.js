@@ -1,19 +1,57 @@
 import s from "../../styles/auth.module.scss";
 import Link from "next/link";
 
+import { gql, useMutation } from "@apollo/client";
 import { useState } from "react";
+import getGQLError from "../../utils/getGQLError";
+import { useRouter } from "next/router";
+
+import {setCookie} from 'nookies'
+
+const SIGNIN = gql`
+  mutation SignIn($input: UsersPermissionsLoginInput!) {
+    login(input: $input) {
+      jwt
+      user {
+        username
+        id
+      }
+    }
+  }
+`;
+
 const SignIn = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const router = useRouter();
 
   const submitForm = async (e) => {
     e.preventDefault();
     console.log(email);
     console.log(password);
 
-    
+    try {
+      await signIn({
+        variables: {
+          input: {
+            identifier: `${email}`,
+            password: `${password}`,
+            provider: "local",
+          },
+        },
+      });
+    } catch (error) {
+      console.log(getGQLError(error));
+    }
   };
 
+  const [signIn] = useMutation(SIGNIN, {
+    onCompleted(data) {
+      console.log(data);
+      setCookie(null, 'AuthCookie', data.login.jwt)
+      router.push('/')
+    },
+  });
   return (
     <>
       <form className={s.signInForm} onSubmit={submitForm}>

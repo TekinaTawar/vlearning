@@ -4,18 +4,28 @@ import s from "../../styles/MiddleSection.module.scss";
 import { FaUserCircle, FaShoppingCart } from "react-icons/fa";
 
 import SearchWidget from "./SearchWidget";
-const MiddleSection = () => {
-  const loggedin = false;
+const MiddleSection = ({ signedIn, runSignOut }) => {
   return (
     <div className={s.sec2}>
       <div className={s.logo}>
         <Image src="/logofull.png" alt="logo" width={153} height={40} />
       </div>
       <SearchWidget />
-      {loggedin ? (
+      {signedIn ? (
         <>
           <div className={s.profile}>
             <FaUserCircle size={22} />
+            <ul className={s.userMenu}>
+              <li>
+                <a href="#">Profile</a>{" "}
+              </li>
+              <li>
+                <a href="#">Orders</a>{" "}
+              </li>
+              <li>
+                <button onClick={runSignOut}>SignOut</button>{" "}
+              </li>
+            </ul>
           </div>
           <div className={s.cart}>
             <FaShoppingCart size={22} />
