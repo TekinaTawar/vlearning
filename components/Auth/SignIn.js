@@ -2,11 +2,12 @@ import s from "../../styles/auth.module.scss";
 import Link from "next/link";
 
 import { gql, useMutation } from "@apollo/client";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import getGQLError from "../../utils/getGQLError";
 import { useRouter } from "next/router";
 
-import {setCookie} from 'nookies'
+import { setCookie } from "nookies";
+import { AuthContext } from "../../context/authContext";
 
 const SIGNIN = gql`
   mutation SignIn($input: UsersPermissionsLoginInput!) {
@@ -23,6 +24,7 @@ const SIGNIN = gql`
 const SignIn = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const { signedIn, setSignedIn } = useContext(AuthContext) 
   const router = useRouter();
 
   const submitForm = async (e) => {
@@ -48,8 +50,9 @@ const SignIn = () => {
   const [signIn] = useMutation(SIGNIN, {
     onCompleted(data) {
       console.log(data);
-      setCookie(null, 'AuthCookie', data.login.jwt)
-      router.push('/')
+      setCookie(null, "AuthCookie", data.login.jwt);
+      setSignedIn(true)
+      router.push("/");
     },
   });
   return (

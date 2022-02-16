@@ -1,12 +1,13 @@
 import Link from "next/link";
 import Router, { useRouter } from "next/router";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { gql, useMutation } from "@apollo/client";
 import { setCookie } from "nookies";
 
 import getGQLError from "../../utils/getGQLError";
 
 import s from "../../styles/auth.module.scss";
+import { AuthContext } from "../../context/authContext";
 
 const SIGNUP = gql`
   mutation SignUp($input: UsersPermissionsRegisterInput!) {
@@ -25,6 +26,7 @@ const SignUp = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+  const {_, setSignedIn}  = useContext(AuthContext)
   const router = useRouter();
   const [signUp] = useMutation(SIGNUP, {
     onCompleted(data) {
@@ -32,6 +34,7 @@ const SignUp = () => {
         maxAge: 30 * 24 * 60 * 60,
         path: "/",
       });
+      setSignedIn(true)
       router.push("/");
     },
   });

@@ -1,5 +1,6 @@
 import s from "../../styles/Nav.module.scss";
 import { useEffect, useState } from "react";
+import Link from "next/link";
 
 const Navbar = () => {
   const [teachers, setTeachers] = useState([]);
@@ -34,7 +35,10 @@ const Navbar = () => {
     <nav className={s.nav}>
       <ul className={s.navLevel1}>
         <li>
-          <a href="#">Video Lectures</a>
+          <Link href="/videoLectures">
+            <a>Video Lectures</a>
+          </Link>
+
           <ul className={s.navLevel2} id={s.navLevel2}>
             <li>
               <a href="#">CA</a>

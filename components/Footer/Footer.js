@@ -33,22 +33,13 @@ const footer = () => {
           <h2>JOIN US</h2>
           <div className={s.socials}>
             <a href="#">
-              <FaTelegram size={24}/>
+              <FaTelegram size={24} />
             </a>
             <a href="#">
-              <FaInstagram size={24}/>
+              <FaWhatsapp size={24} />
             </a>
             <a href="#">
-              <FaFacebook size={24}/>
-            </a>
-            <a href="#">
-              <FaYoutube size={24}/>
-            </a>
-            <a href="#">
-              <FaTwitter size={24}/>
-            </a>
-            <a href="#">
-              <FaWhatsapp size={24}/>
+              <FaInstagram size={24} />
             </a>
           </div>
         </div>
@@ -56,7 +47,9 @@ const footer = () => {
           <h2>GET IN TOUCH</h2>
           <p>contact@vvlearnings.com</p>
           <p>+91 6397377811</p>
-          <p>123 5th Ave, Chandrapur, <br></br>Maharashtra 10021</p>
+          <p>
+            123 5th Ave, Chandrapur, <br></br>Maharashtra 10021
+          </p>
         </div>
         <div className={s.copyright}>
           copyright © 2021 VLearning - All Rights Reserved (Powered By
