@@ -15,7 +15,7 @@ function MyApp({ Component, pageProps }) {
   useEffect(() => {
     const authCookie = parseCookies().AuthCookie;
     if (authCookie) setSignedIn(true);
-    router.push("/videoLectures");
+    router.push("/checkout");
   }, []);
 
   if (Component.getLayout) {

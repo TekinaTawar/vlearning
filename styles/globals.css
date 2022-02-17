@@ -30,7 +30,7 @@ body {
 #__next {
   display: flex;
   flex-direction: column;
-  min-height: 110%;
+  min-height: 100%;
 }
 
 body,

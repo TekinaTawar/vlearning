@@ -5,10 +5,10 @@ import { FaUserCircle, FaShoppingCart } from "react-icons/fa";
 
 import SearchWidget from "./SearchWidget";
 const MiddleSection = ({ signedIn, runSignOut }) => {
-  return (  
+  return (
     <div className={s.sec2}>
       <div className={s.logo}>
-        <Image src="/logofull.png" alt="logo" width={153} height={40} />
+        <Image src="/logoFull.svg" alt="logo" width={153} height={40} />
       </div>
       <SearchWidget />
       {signedIn ? (
