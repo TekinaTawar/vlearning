@@ -1,4 +1,4 @@
-import "../styles/globals.css";
+import "../styles/globals.scss";
 
 import { useState, useEffect } from "react";
 import { ApolloProvider } from "@apollo/client";
@@ -15,7 +15,7 @@ function MyApp({ Component, pageProps }) {
   useEffect(() => {
     const authCookie = parseCookies().AuthCookie;
     if (authCookie) setSignedIn(true);
-    router.push("/checkout");
+    // router.push("/videoLecture");
   }, []);
 
   if (Component.getLayout) {

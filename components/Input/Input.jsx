@@ -1,12 +1,7 @@
-import * as S from "./input.styles";
+import * as S from "./Input.styles";
+import camelCase from "../../utils/camelCase";
 
 const Input = ({ name, value, setValue }) => {
-  const camelCase = (str) => {
-    return str.replace(/\W+(.)/g, function (_, chr) {
-      return chr.toUpperCase();
-    });
-  };
-
   return (
     <S.Input>
       <input

@@ -16,15 +16,15 @@ body {
 }
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #F0F0F0;
+  background: #f0f0f0;
 }
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #CECECE;
+  background: #cecece;
 }
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #A7A7A7;
+  background: #a7a7a7;
 }
 
 #__next {
@@ -48,9 +48,17 @@ a {
 }
 
 :root {
-  --primary-yellow: #ffcc00;
-  --secondry-purple: #6270ea;
-  --secondry-blue: #0b2b4f;
+  --primary-yellow: hsl(48, 100%, 50%);
+  --primary-yellow-hover: hsl(48, 100%, 60%);
   --background-gray: #f0f0f0;
+  --gradient-dark-blue: hsl(198, 100%, 24%);
+  --gradient-light-blue: hsl(186, 100%, 29%);
   --secondry-gradient: linear-gradient(to right, #00567c, #008494);
+  --secondry-purple: #6270ea; //depricated
+  --secondry-blue: #0b2b4f; //deprecated
+}
+
+
+@media (-webkit-min-device-pixel-ratio: 1.1) {
+  
 }
