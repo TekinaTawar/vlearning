@@ -1,10 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
-import s from "../../styles/MiddleSection.module.scss";
+import { useContext } from "react";
+import { CartContext } from "../../context/cartContext";
 import { FaUserCircle, FaShoppingCart } from "react-icons/fa";
+import s from "../../styles/MiddleSection.module.scss";
 
 import SearchWidget from "./SearchWidget";
 const MiddleSection = ({ signedIn, runSignOut }) => {
+  const { cartHidden, setCartHidden } = useContext(CartContext);
   return (
     <div className={s.sec2}>
       <div className={s.logo}>
@@ -27,7 +30,7 @@ const MiddleSection = ({ signedIn, runSignOut }) => {
               </li>
             </ul>
           </div>
-          <div className={s.cart}>
+          <div className={s.cart} onClick={() => setCartHidden(!cartHidden)}>
             <FaShoppingCart size={22} />
           </div>
         </>

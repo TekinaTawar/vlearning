@@ -1,12 +1,13 @@
 import Input from "../Input/Input";
 import { useState } from "react";
 import * as S from "./InfoSection.styles";
+import { IoClose } from "react-icons/io";
 
-const InfoSection = () => {
+const InfoSection = ({ className }) => {
   const [couponCode, setCouponCode] = useState("");
 
   return (
-    <S.InfoSection>
+    <S.InfoSection className={className}>
       {/* products section  */}
       <S.Products>
         <div className="product">
@@ -15,6 +16,8 @@ const InfoSection = () => {
           </div>
           <h5>CA Foundation Mathematics, logical Reasoning, Accounts</h5>
           <p className="description">USB & Soft Copy</p>
+          <button className="deleteProduct">+ 
+          </button>
           <p className="productPrice">Rs 69.00</p>
         </div>
         <div className="product">

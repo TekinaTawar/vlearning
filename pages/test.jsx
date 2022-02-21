@@ -1,7 +1,6 @@
 import { useState } from "react";
 import styled from "styled-components";
-import Radio from "../components/Radio/Radio";
-import * as S from "../components/Radio/Radio.styles";
+import Cart from "../components/Cart/Cart";
 
 const Container = styled.div`
   padding: 20px;
@@ -35,32 +34,16 @@ const test = () => {
   //     console.log("this is somedata");
   //   }, 4000);
   // };
-  const [video, setVideo] = useState("");
 
-  const setOption = (e) => {
-    console.log(e.target.value);
-    setVideo(e.target.value);
-  };
+  const [hidden, setHidden] = useState(false);
 
   return (
     <Container>
       {/* <div className="vl"></div> */}
       {/* <div className="hl"></div> */}
       {/* <S.RadioButton2 value={1.2} valueExtension="Months" name="views" disabled={true}/> */}
-      <S.RadioButton
-        value="USB"
-        valueExtension=""
-        name="videos"
-        option={video}
-        setOption={setOption}
-      />
-      <S.RadioButton
-        value="Download"
-        valueExtension=""
-        name="videos"
-        option={video}
-        setOption={setOption}
-      />
+      <Cart hidden={hidden} setHidden={setHidden} />
+      {/* <button onClick={() => setHidden(!hidden)}>show cart</button> */}
     </Container>
   );
 };

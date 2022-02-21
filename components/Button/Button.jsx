@@ -1,8 +1,16 @@
 import * as S from "./Button.styles";
 
-const Button = ({ children, onClick, loading, btnStyle, stretch }) => {
+const Button = ({
+  className,
+  children,
+  onClick,
+  loading,
+  btnStyle,
+  stretch,
+}) => {
   return (
     <S.Button
+      className={className}
       onClick={onClick}
       className={loading && "loading"}
       btnStyle={btnStyle}

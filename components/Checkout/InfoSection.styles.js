@@ -13,6 +13,7 @@ export const InfoSection = styled.div`
     border-bottom: 2px solid #e1e1e1;
   }
 `;
+
 export const Products = styled.div`
   & > .product {
     display: grid;
@@ -20,13 +21,13 @@ export const Products = styled.div`
     grid-template-rows: 35px 35px;
     grid-gap: 10px;
     grid-template-areas:
-      "productImage productName price"
+      "productImage productName deleteProduct"
       "productImage description price";
     margin-bottom: 20px;
 
     & > .image {
       grid-area: productImage;
-      background-color: #F1B900;
+      background-color: #f1b900;
     }
 
     & > h5 {
@@ -40,6 +41,29 @@ export const Products = styled.div`
       grid-area: description;
       font-size: 12px;
       color: #717171;
+    }
+
+    & > .deleteProduct {
+      grid-area: deleteProduct;
+      justify-self: end;
+      align-self: start;
+      height: 25px;
+      width: 25px;
+      display: flex;
+      justify-content: center;
+      align-items: start;
+      border-radius: 50%;
+      transform: rotate(45deg);
+      /* padding: 4px */
+      font-size: 30px;
+      color: hsl(0, 0%, 50%);
+      border: none;
+      background-color: transparent;
+
+      &:hover{
+        color: red;
+      }
+
     }
     & > .productPrice {
       grid-area: price;
