@@ -1,12 +1,13 @@
-import * as S from "../styles/videoLecture.style";
+import * as S from "../styles/VideoLecture.style";
+import ScrollToSee from "../components/shared/ScrollToSee/ScrollToSee";
 import { RadioButton, RadioButton2 } from "../components/Radio/Radio.styles";
 
 import { useState } from "react";
-import { FaShoppingCart, FaCoins, FaAngleDown } from "react-icons/fa";
+import { FaShoppingCart, FaCoins } from "react-icons/fa";
 
 import Button from "../components/Button/Button";
 
-const videoLecture = () => {
+const VideoLecture = () => {
   const teacherName = "CA Abhay Bhanot";
   const examName = "CA Foundation";
   const batch = "Regular";
@@ -158,12 +159,9 @@ const videoLecture = () => {
           </S.StudyMaterial>
         </S.Right>
         {/* scroll to see more remaining */}
-        <S.Center>
-          <FaAngleDown size={30} />
-          <span>Scroll to see More Info</span>
-        </S.Center>
+        <ScrollToSee />
       </S.Main>
     </S.Container>
   );
 };
-export default videoLecture;
+export default VideoLecture;

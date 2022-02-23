@@ -1,3 +1,10 @@
+import { Hero, FacultySection } from "../components/Home";
+
 export default function Home() {
-  return <main>this is the main of home page.</main>;
+  return (
+    <main>
+      <Hero />
+      <FacultySection />
+    </main>
+  );
 }

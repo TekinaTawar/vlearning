@@ -4,12 +4,20 @@ export const Button = styled.button`
   border: none;
   font-size: 28px;
   border-radius: 5px;
-  padding: 24px 30px;
+  padding: 22px 30px;
   display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
   position: relative;
+
+  & > p {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+
   //if stretch is true take the full space horizontally
   ${(props) =>
     props.stretch &&

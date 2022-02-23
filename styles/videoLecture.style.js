@@ -216,24 +216,4 @@ export const StudyMaterial = styled.div`
   }
 `;
 
-//center
-export const Center = styled.div`
-  grid-column: span 2;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  opacity: .5;
-  color: var(--gradient-light-blue);
-  font-size: 22px;
-  display: relative;
-  transition: all .5s linear;
-  &>span{
-    margin-left: 10px;
-  }
 
-  &:hover{
-    transform: translateY(-3px) scale(1.05);
-    
-    opacity: .7;
-  }
-`;

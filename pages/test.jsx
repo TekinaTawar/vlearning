@@ -24,7 +24,7 @@ const Container = styled.div`
   }
 `;
 
-const test = () => {
+const Test = () => {
   // const [loading, setLoading] = useState(false);
 
   // const getdata = () => {
@@ -48,6 +48,6 @@ const test = () => {
   );
 };
 
-test.getLayout = (page) => page;
+Test.getLayout = (page) => page;
 
-export default test;
+export default Test;

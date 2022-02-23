@@ -10,9 +10,8 @@ const Button = ({
 }) => {
   return (
     <S.Button
-      className={className}
       onClick={onClick}
-      className={loading && "loading"}
+      className={[loading && "loading", className].join(" ")}
       btnStyle={btnStyle}
       stretch={stretch}
     >
