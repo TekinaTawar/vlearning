@@ -23,12 +23,14 @@ export const Container = styled.div`
   flex-direction: column;
   justify-content: space-evenly;
 `;
+
 export const Heading = styled.div`
   font-size: 50px;
   font-weight: 600;
   padding-left: 30px;
   border-left: 20px solid var(--primary-yellow);
 `;
+
 export const FacultyScroll = styled.div`
   height: 162px;
   display: grid;
