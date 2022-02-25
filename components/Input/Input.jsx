@@ -1,4 +1,4 @@
-import * as S from "./Input.styles";
+import * as S from "components/Input/_Input.styles"
 import camelCase from "../../utils/camelCase";
 
 const Input = ({ name, value, setValue }) => {
