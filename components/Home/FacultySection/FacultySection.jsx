@@ -21,7 +21,7 @@ const FacultySection = () => {
         </S.FacultyScroll>
         <S.ImageText>
           <S.WorkingLady>
-            <Image src={WorkingLadySvg} layout="fill" priority="false" />
+            <Image src={WorkingLadySvg} layout="fill" priority="false" alt="Working Lady" />
           </S.WorkingLady>
           <S.TakeTheNext>
             Take The <strong>next step</strong> toward your personal and

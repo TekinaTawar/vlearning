@@ -6,29 +6,33 @@ const Navbar = () => {
   const [teachers, setTeachers] = useState([]);
   const [subjects, setSubjects] = useState([]);
 
-  useEffect(async () => {
-    const res = await Promise.all([
-      fetch(`${process.env.NEXT_PUBLIC_API_URI}/api/teachers`),
-      fetch(`${process.env.NEXT_PUBLIC_API_URI}/api/subjects`),
-    ]);
-    const [teachersData, subjectsData] = await Promise.all(
-      res.map((e) => e.json())
-    );
+  useEffect(() => {
+    async function fetchData() {
+      const res = await Promise.all([
+        fetch(`${process.env.NEXT_PUBLIC_API_URI}/api/teachers`),
+        fetch(`${process.env.NEXT_PUBLIC_API_URI}/api/subjects`),
+      ]);
+      const [teachersData, subjectsData] = await Promise.all(
+        res.map((e) => e.json())
+      );
+  
+      const teachers = teachersData.data.map((teacherData) => {
+        const {
+          attributes: { teacherName },
+        } = teacherData;
+        return teacherName;
+      });
+      setTeachers(teachers);
+      const subjects = subjectsData.data.map((subjectData) => {
+        const {
+          attributes: { subjectName },
+        } = subjectData;
+        return subjectName;
+      });
+      setSubjects(subjects);
+    }
+    fetchData();
 
-    const teachers = teachersData.data.map((teacherData) => {
-      const {
-        attributes: { teacherName },
-      } = teacherData;
-      return teacherName;
-    });
-    setTeachers(teachers);
-    const subjects = subjectsData.data.map((subjectData) => {
-      const {
-        attributes: { subjectName },
-      } = subjectData;
-      return subjectName;
-    });
-    setSubjects(subjects);
   }, []);
 
   return (

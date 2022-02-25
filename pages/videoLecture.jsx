@@ -1,4 +1,4 @@
-import * as S from "../styles/VideoLecture.style";
+import * as S from "../styles/videoLecture.styles";
 import ScrollToSee from "../components/shared/ScrollToSee/ScrollToSee";
 import { RadioButton, RadioButton2 } from "../components/Radio/Radio.styles";
 

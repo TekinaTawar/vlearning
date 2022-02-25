@@ -9,7 +9,13 @@ const Hero = () => {
     <S.Container>
       <S.GetTheEdge>Get the edge you need</S.GetTheEdge>
       <S.ImageSection>
-        <Image src={ReadingMan} layout="fill" objectFit="contain" objectPosition="left top"/>
+        <Image
+          src={ReadingMan}
+          layout="fill"
+          objectFit="contain"
+          objectPosition="left top"
+          alt="Reading Man"
+        />
         {/* <Image src="/images/Home/ReadingMan.svg" layout="fill"/> */}
       </S.ImageSection>
       <S.TextSection>
@@ -32,7 +38,7 @@ const Hero = () => {
           </Button>
         </S.ButtonDiv>
       </S.TextSection>
-      <S.ShScrollToSee/>
+      <S.ShScrollToSee />
     </S.Container>
   );
 };
